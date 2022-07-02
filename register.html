@@ -26,8 +26,43 @@
 
 
     <main class="container">
-        <h2>Register a new pet!</h2>
+        
+        <div class="title">
+            <h2>Register a new pet!</h2>
+
+            <p id="container-pets"></p>
+        </div>
+
         <div>
+            <input type="text" placeholder="Enter pet's name" id="txtPetName" class="form-control">
+
+            <input type="number" placeholder="Enter pet's age" id="txtPetAge" class="form-control">
+
+            <input type="text" placeholder="Enter pet's breed" id="txtPetBreed" class="form-control">
+
+
+            <input type="" placeholder="Enter pet's gender" id="txtPetGender" class="form-control">
+
+            <select class="form-select" id="txtPetService" >
+                <option value="Nails cut">Nails cut</option>
+
+                <option value="Grooming">Grooming</option>
+
+                <option value="Vaccine">Vaccine</option>
+            </select>
+
+            <input type="text" placeholder="Enter pet's owner name" id="txtPetOwner" class="form-control">
+
+            <input type="text" placeholder="Enter pet's owner contact number" id="txtPetOwnerNumber" class="form-control">
+
+            <div class="btn-container">
+                <input type="button" value="Register" onclick="register()" class="btn btn-primary">
+            </div>
+    
+        </div>
+
+        <div>
+            <h2>Pet's list</h2>
             <ol id="listPets">
 
             </ol>
