@@ -77,5 +77,11 @@ function displayInfo(){
     document.getElementById("salonInfo").innerHTML=`Welcome to the ${petSaloon.name} family. It is available at ${petSaloon.address} from ${petSaloon.hours.open} to ${petSaloon.hours.close}`;
 }
 
+
+function displayNPets(){
+    alert(`There's ${petSaloon.pets.length} pets registered.`)
+}
+
 displayNames();
 displayInfo();
+displayNPets();
