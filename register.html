@@ -34,15 +34,25 @@
         </div>
 
         <div>
+            <h6>Name:</h6>
             <input type="text" placeholder="Enter pet's name" id="txtPetName" class="form-control">
 
+            <h6>Age:</h6>
             <input type="number" placeholder="Enter pet's age" id="txtPetAge" class="form-control">
 
+
+            <h6>Breed:</h6>
             <input type="text" placeholder="Enter pet's breed" id="txtPetBreed" class="form-control">
 
+            <h6>Gender:</h6>
+            <select class="form-select" id="txtPetGender" >
+                <option value="Male">Male</option>
 
-            <input type="" placeholder="Enter pet's gender" id="txtPetGender" class="form-control">
+                <option value="Female">Female</option>
 
+            </select>
+
+            <h6>Service:</h6>
             <select class="form-select" id="txtPetService" >
                 <option value="Nails cut">Nails cut</option>
 
@@ -51,8 +61,10 @@
                 <option value="Vaccine">Vaccine</option>
             </select>
 
+            <h6>Owner name:</h6>
             <input type="text" placeholder="Enter pet's owner name" id="txtPetOwner" class="form-control">
 
+            <h6>Owner phone number:</h6>
             <input type="text" placeholder="Enter pet's owner contact number" id="txtPetOwnerNumber" class="form-control">
 
             <div class="btn-container">
@@ -62,7 +74,7 @@
         </div>
 
         <div>
-            <h2>Pet's list</h2>
+            <h2 class="listTitle">Pet's list</h2>
             <ol id="listPets">
 
             </ol>
@@ -72,7 +84,9 @@
 
     <footer>
         <p>All the copyrights reserved &copy; 2022 </p>
-        <p id="salonInfo"></p>
+        <div  id="salonInfo" class="information">
+            
+        </div>
     </footer>
 
     <script src="register.js"></script>

@@ -42,14 +42,14 @@ function displayNames(){
     
     for (let i = 0; i < petSaloon.pets.length; i++) {
         document.getElementById("listPets").innerHTML+=`<li>${petSaloon.pets[i].name}</li>`;
-            
-            
+                         
     }  
+    
     
 }
 
 function displayInfo(){
-    document.getElementById("salonInfo").innerHTML=`Welcome to the ${petSaloon.name} family. It is available at ${petSaloon.address} from ${petSaloon.hours.open} to ${petSaloon.hours.close}`;
+    document.getElementById("salonInfo").innerHTML=`<p>Welcome to the ${petSaloon.name} family. It is available at ${petSaloon.address} from ${petSaloon.hours.open} to ${petSaloon.hours.close}</p>`;
 }
 
 
@@ -65,26 +65,38 @@ function displayNPets(){
 function init(){
 
     //creating objects
-    let scooby = new Pet("Scooby",20,"Dane","Male","Grooming","Shaggy","666-666-6666");
+    // let scooby = new Pet("Scooby",20,"Dane","Male","Grooming","Shaggy","666-666-6666");
 
-    let speedyGonzales = new Pet("Speedy",10,"Dane","Male","Grooming","Eduardo","666-666-6666");
+    // let speedyGonzales = new Pet("Speedy",10,"Dane","Male","Grooming","Eduardo","666-666-6666");
 
-    let jessie= new Pet("Jessie",10,"Mixed","Female","Grooming","Pedro","666-666-6666");
+    // let jessie= new Pet("Jessie",10,"Mixed","Female","Grooming","Pedro","666-666-6666");
 
-    petSaloon.pets.push(scooby,speedyGonzales,jessie);
+    
+
+    // petSaloon.pets.push(scooby,speedyGonzales,jessie);
     //main function
     //hook events
     
+    if(petSaloon.pets.length == 0){
+        document.getElementById("listPets").innerHTML=`<p>There's no pets registered.</p>`;
+    }
     
-    
-    displayNames();
     displayInfo();
-
+    
     
     
 }
 
+function clearForm(){
+    document.getElementById("txtPetName").value="";
+    document.getElementById("txtPetAge").value="";
+    document.getElementById("txtPetBreed").value="";
+    document.getElementById("txtPetOwner").value="";
+    document.getElementById("txtPetOwnerNumber").value="";
+}
+
 function register(){
+    
     
     let petName=document.getElementById("txtPetName").value;
 
@@ -102,14 +114,27 @@ function register(){
 
     let petOwnerNumber = document.getElementById("txtPetOwnerNumber").value;
     
+    if(petName == "" || petAge == "" || petBreed=="" || petGender=="" || petService=="" || petOwner == "" || petOwnerNumber == ""){
+        alert("You must add all the information that is needed.");
+    }else{
 
-    let newPet = new Pet(petName, petAge, petBreed, petGender, petService, petOwner, petOwnerNumber);
+    
 
-    petSaloon.pets.push(newPet);
+        let newPet = new Pet(petName, petAge, petBreed, petGender, petService, petOwner, petOwnerNumber);
 
-    displayNPets();
+        petSaloon.pets.push(newPet);
 
-    console.log(petSaloon.pets)
+        displayNPets();
+        
+        document.getElementById("listPets").innerHTML="";
+        displayNames();
+        clearForm();
+        
+
+        console.log(petSaloon.pets);
+    }
 
 }
+
+
 window.onload=init;
