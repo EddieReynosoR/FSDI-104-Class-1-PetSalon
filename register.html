@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css
     ">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 
 
     <title>Pet Salon</title>
@@ -79,16 +79,41 @@
 
             </ol>
         </div>
+
+        <div id="pet-cards" class="pets">
+
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Breed</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Service</th>
+                  <th scope="col">Owner's name</th>
+                  <th scope="col">Owner's phone</th>
+                </tr>
+              </thead>
+              <tbody id="tablePets">
+
+              </tbody>
+          </table>
     </main>
 
 
     <footer>
-        <p>All the copyrights reserved &copy; 2022 </p>
-        <div  id="salonInfo" class="information">
-            
+        <div>
+            <p>All the copyrights reserved &copy; 2022 </p>
+            <div  id="salonInfo" class="information">
+                
+            </div>
         </div>
     </footer>
 
-    <script src="register.js"></script>
+    <script src="scripts/register.js"></script>
+    <script src="scripts/display.js"></script>
 </body>
 </html>

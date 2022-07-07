@@ -74,14 +74,18 @@ function init(){
     
 
     // petSaloon.pets.push(scooby,speedyGonzales,jessie);
-    //main function
-    //hook events
+    // main function
+    // hook events
     
     if(petSaloon.pets.length == 0){
         document.getElementById("listPets").innerHTML=`<p>There's no pets registered.</p>`;
+
+
+        document.getElementById("tablePets").innerHTML=`<p>There's no pets registered.</p>`;
     }
     
     displayInfo();
+    
     
     
     
@@ -95,23 +99,33 @@ function clearForm(){
     document.getElementById("txtPetOwnerNumber").value="";
 }
 
+
+
+
+
+function isValid(aPet){
+    let valid=true;
+    if(aPet.name=""){
+        valid=false;
+        alert("Please enter a pet name.");
+    }
+    return valid;
+}
 function register(){
-    
     
     let petName=document.getElementById("txtPetName").value;
 
 
-    
     let petAge = document.getElementById("txtPetAge").value;
-
+    
     let petBreed = document.getElementById("txtPetBreed").value;
-
+    
     let petGender = document.getElementById("txtPetGender").value;
-
+    
     let petService = document.getElementById("txtPetService").value;
-
+    
     let petOwner = document.getElementById("txtPetOwner").value;
-
+    
     let petOwnerNumber = document.getElementById("txtPetOwnerNumber").value;
     
     if(petName == "" || petAge == "" || petBreed=="" || petGender=="" || petService=="" || petOwner == "" || petOwnerNumber == ""){
@@ -123,7 +137,8 @@ function register(){
         let newPet = new Pet(petName, petAge, petBreed, petGender, petService, petOwner, petOwnerNumber);
 
         petSaloon.pets.push(newPet);
-
+        displayCardPets();
+        displayPetsTable();
         displayNPets();
         
         document.getElementById("listPets").innerHTML="";
@@ -133,6 +148,18 @@ function register(){
 
         console.log(petSaloon.pets);
     }
+
+
+
+    // if(isValid(newPet)){
+    //     petSaloon.pets.push(newPet);
+    //     displayCardPets();
+    //     console.log(petSaloon.pets);
+    //     displayNumberOfPets();
+    //     clearInputs();
+    // }else{
+    //     alert("Please enter the information");
+    // }
 
 }
 
