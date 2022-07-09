@@ -74,6 +74,19 @@
         </div>
 
         <div>
+            <h2 class="listTitle">Search Pet</h2>
+
+            <div class="form-floating">
+                <input type="search" class="form-control" id="searchPet" placeholder="Search">
+                <label for="searchPet">Search pet</label>
+            </div>
+            
+            <div class="btn-container">
+                <input type="button" value="Search" class="btn btn-primary" onclick="search()">
+            </div>
+        </div>
+
+        <div>
             <h2 class="listTitle">Pet's list</h2>
             <ol id="listPets">
 
@@ -95,6 +108,7 @@
                   <th scope="col">Service</th>
                   <th scope="col">Owner's name</th>
                   <th scope="col">Owner's phone</th>
+                  <th scope="col"> </th>
                 </tr>
               </thead>
               <tbody id="tablePets">

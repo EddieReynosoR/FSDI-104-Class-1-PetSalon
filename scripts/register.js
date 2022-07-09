@@ -22,6 +22,8 @@ let petSaloon = {
     
 }
 
+//counter
+let c=0;
 //constructor function
 function Pet(name,age,breed,gender,service,ownerName,contactPhone){
     this.name=name;
@@ -31,6 +33,7 @@ function Pet(name,age,breed,gender,service,ownerName,contactPhone){
     this.service=service;
     this.ownerName=ownerName;
     this.contactPhone=contactPhone;
+    this.id=c++;
 }
 
 
@@ -58,7 +61,16 @@ function displayNPets(){
 }
 
 
-
+function search(){
+    let searchString = document.getElementById("searchPet").value;
+    for(let i=0; i<petSaloon.pets.length; i++){
+        if(searchString.toLowerCase()==petSaloon.pets[i].name.toLowerCase()){
+            document.getElementById(petSaloon.pets[i].id).classList.add("selected");
+        }else{
+            document.getElementById(petSaloon.pets[i].id).classList.remove("selected");
+        }
+    }
+}
 
 
 
@@ -77,18 +89,21 @@ function init(){
     // main function
     // hook events
     
-    if(petSaloon.pets.length == 0){
-        document.getElementById("listPets").innerHTML=`<p>There's no pets registered.</p>`;
-
-
-        document.getElementById("tablePets").innerHTML=`<p>There's no pets registered.</p>`;
-    }
-    
+    displayMessage();
     displayInfo();
     
     
     
     
+}
+
+function displayMessage(){
+    if(petSaloon.pets.length < 1){
+        document.getElementById("listPets").innerHTML=`<p>There's no pets registered.</p>`;
+
+
+        document.getElementById("tablePets").innerHTML=`<p>There's no pets registered.</p>`;
+    }
 }
 
 function clearForm(){
@@ -111,6 +126,29 @@ function isValid(aPet){
     }
     return valid;
 }
+
+
+function deletePet(petID){
+    console.log("Deleting pet..." + petID);
+    document.getElementById(petID).remove();
+    let petIndex;
+    for(let i=0; i<petSaloon.pets.length; i++){
+        if(petSaloon.pets[i].id==petID){
+            petIndex=i;
+        }
+    }
+    petSaloon.pets.splice(petIndex,1);
+    displayCardPets();
+    displayPetsTable();
+    displayNPets();
+    //remove from the array
+
+    document.getElementById("listPets").innerHTML="";
+    displayNames();
+    clearForm();
+    displayMessage();
+}
+
 function register(){
     
     let petName=document.getElementById("txtPetName").value;
@@ -144,6 +182,7 @@ function register(){
         document.getElementById("listPets").innerHTML="";
         displayNames();
         clearForm();
+        displayMessage();
         
 
         console.log(petSaloon.pets);

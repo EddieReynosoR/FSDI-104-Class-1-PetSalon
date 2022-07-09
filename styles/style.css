@@ -73,3 +73,15 @@ h6{
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
+.table th, .table td{
+    margin-right: 0;
+}
+
+label{
+    margin-left: 10px;
+}
+
+.selected{
+    background-color: gold;
+}
