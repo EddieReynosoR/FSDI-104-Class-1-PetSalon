@@ -13,7 +13,7 @@ function displayCardPets(){
     //         <p>Service: ${petSaloon.pets[i].service}</p>
     //         <p>Owner: ${petSaloon.pets[i].ownerName}</p>
     //         <p>Phone: ${petSaloon.pets[i].contactPhone}</p>
-    //         <button class="btn btn-danger" onclick=deletePet(${petSaloon.pets[i].id});> Delete </button>
+    //         <button class="btn btn-danger" onclick=deletePet(${petSaloon.pets[i].id});> <i class="fa-solid fa-trash-can"></i> </button>
     //     </div>
     //     `;
 
@@ -40,7 +40,7 @@ function displayPetsTable(){
                 <td>${petSaloon.pets[i].service}</td>
                 <td>${petSaloon.pets[i].ownerName}</td>
                 <td>${petSaloon.pets[i].contactPhone}</td>
-                <td><button class="btn btn-danger" onclick=deletePet(${petSaloon.pets[i].id});> Delete </button></td>
+                <td><button class="btn btn-danger" onclick=deletePet(${petSaloon.pets[i].id});> <i class="fa-solid fa-trash-can"></i> </button></td>
             </tr>
             
             

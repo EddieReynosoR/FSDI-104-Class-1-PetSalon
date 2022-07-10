@@ -100,7 +100,7 @@ function init(){
 
 function displayMessage(){
     if(petSaloon.pets.length < 1){
-        document.getElementById("listPets").innerHTML=`<p>There's no pets registered.</p>`;
+        // document.getElementById("listPets").innerHTML=`<p>There's no pets registered.</p>`;
 
 
         document.getElementById("tablePets").innerHTML=`<p>There's no pets registered.</p>`;

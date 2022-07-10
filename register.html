@@ -9,6 +9,8 @@
     ">
     <link rel="stylesheet" href="styles/style.css">
 
+    <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
+
 
     <title>Pet Salon</title>
 </head>
@@ -21,7 +23,7 @@
             <a class="nav-link" href="register.html">Register</a>
             
         </nav>
-        <h1 class="display-1">The Fashion Pet</h1>
+        <h1 class="display-1"><i class="fa-solid fa-dog"></i> The Fashion Pet</h1>
     </header>
 
 
@@ -33,7 +35,7 @@
             <p id="container-pets"></p>
         </div>
 
-        <div>
+        <div class="form">
             <h6>Name:</h6>
             <input type="text" placeholder="Enter pet's name" id="txtPetName" class="form-control">
 
@@ -79,11 +81,9 @@
             <div class="form-floating">
                 <input type="search" class="form-control" id="searchPet" placeholder="Search">
                 <label for="searchPet">Search pet</label>
+                <button class="btn btn-primary search" onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             
-            <div class="btn-container">
-                <input type="button" value="Search" class="btn btn-primary" onclick="search()">
-            </div>
         </div>
 
         <!--<div>

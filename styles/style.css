@@ -36,6 +36,7 @@ a:hover{
     margin-right: 20px;
     display: flex;
 }
+
 .main-info{
     width: 100%;
     background-color: #fff8ca;
@@ -51,6 +52,7 @@ header{
 
 .display-1{
     color: rgb(0, 102, 255);
+    margin-left: 20px;
 }
 
 .information{
@@ -127,13 +129,25 @@ label{
 }
 
 .info-container .container2{
-    width: 100%;
-    height: 500px;
-    display: flex;
+    margin-top: 50px;
+    text-align: center;
 }
 
 
-.info-container .container3{
-    margin-top: 50px;
-    text-align: center;
+
+
+.search{
+    margin-top: 10px;
+    margin-left: 98%;
+}
+
+h4{
+    margin-top: 30px;
+}
+
+.form{
+    border-bottom: solid 2px rgba(128, 128, 128, 0.389);
+}
+.btn-container{
+    margin-bottom: 20px;
 }
