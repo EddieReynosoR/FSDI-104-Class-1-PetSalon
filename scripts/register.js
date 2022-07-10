@@ -39,17 +39,17 @@ function Pet(name,age,breed,gender,service,ownerName,contactPhone){
 
 
 
-function displayNames(){
+// function displayNames(){
 
 
     
-    for (let i = 0; i < petSaloon.pets.length; i++) {
-        document.getElementById("listPets").innerHTML+=`<li>${petSaloon.pets[i].name}</li>`;
+//     for (let i = 0; i < petSaloon.pets.length; i++) {
+//         document.getElementById("listPets").innerHTML+=`<li>${petSaloon.pets[i].name}</li>`;
                          
-    }  
+//     }  
     
     
-}
+// }
 
 function displayInfo(){
     document.getElementById("salonInfo").innerHTML=`<p>Welcome to the ${petSaloon.name} family. It is available at ${petSaloon.address} from ${petSaloon.hours.open} to ${petSaloon.hours.close}</p>`;
@@ -69,6 +69,7 @@ function search(){
         }else{
             document.getElementById(petSaloon.pets[i].id).classList.remove("selected");
         }
+
     }
 }
 
@@ -143,8 +144,8 @@ function deletePet(petID){
     displayNPets();
     //remove from the array
 
-    document.getElementById("listPets").innerHTML="";
-    displayNames();
+    // document.getElementById("listPets").innerHTML="";
+    // displayNames();
     clearForm();
     displayMessage();
 }
@@ -179,8 +180,8 @@ function register(){
         displayPetsTable();
         displayNPets();
         
-        document.getElementById("listPets").innerHTML="";
-        displayNames();
+        // document.getElementById("listPets").innerHTML="";
+        // displayNames();
         clearForm();
         displayMessage();
         
